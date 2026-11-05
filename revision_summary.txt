@@ -1,0 +1,98 @@
+Environment: Python 3.11.17 | scikit-learn 1.9.1 | pymoo 0.6.2
+
+A (theta = 0.7 vs NSGA-II 3-obj)
+       tau  theta  mean size               vs                metric  mean diff  95% CI low  95% CI high  runs favoring first  Wilcoxon p  Holm p (9 settings)
+36   0.005    0.7       15.9  NSGA-II (3-obj)           F1_gauss_10     0.0204     -0.0019       0.0428                    7      0.1055               0.3164
+37   0.005    0.7       15.9  NSGA-II (3-obj)  F1_semantic_gauss_10     0.0144     -0.0097       0.0384                    8      0.1055               0.3164
+38   0.005    0.7       15.9  NSGA-II (3-obj)              macro_F1    -0.0003     -0.0091       0.0084                    5      0.9219               1.0000
+90   0.010    0.7       15.5  NSGA-II (3-obj)           F1_gauss_10     0.0221     -0.0056       0.0498                    5      0.2324               0.4648
+91   0.010    0.7       15.5  NSGA-II (3-obj)  F1_semantic_gauss_10     0.0179     -0.0089       0.0446                    6      0.2324               0.4648
+92   0.010    0.7       15.5  NSGA-II (3-obj)              macro_F1    -0.0029     -0.0097       0.0039                    3      0.1934               0.6406
+144  0.020    0.7       12.8  NSGA-II (3-obj)           F1_gauss_10     0.0158     -0.0151       0.0467                    5      0.7695               0.7695
+145  0.020    0.7       12.8  NSGA-II (3-obj)  F1_semantic_gauss_10     0.0069     -0.0221       0.0359                    4      1.0000               1.0000
+146  0.020    0.7       12.8  NSGA-II (3-obj)              macro_F1    -0.0125     -0.0232      -0.0018                    2      0.0273               0.2188
+
+B1
+             class     predictor  accuracy predicting part file
+0  TCP_IP-DDoS-SYN           IAT                         0.9722
+1  TCP_IP-DDoS-SYN  IAT_centered                         0.4341
+2   TCP_IP-DoS-SYN           IAT                         0.9704
+3   TCP_IP-DoS-SYN  IAT_centered                         0.5063
+
+B2
+            features  random-split macro-F1  file-disjoint macro-F1     gap
+0        without IAT                 0.9293                  0.7760  0.1534
+1           with IAT                 0.9997                  0.9997  0.0001
+2           IAT only                 0.9997                  0.9997  0.0000
+3  centered IAT only                 0.6031                  0.4667  0.1364
+
+C1
+   jitter SD (x median within-class IQR)  jitter SD (IAT units)  All + IAT macro-F1  IAT-only macro-F1
+0                                    0.0           0.000000e+00              0.8847             0.7533
+1                                    0.1           1.693629e+07              0.5999             0.2046
+2                                    0.5           8.468145e+07              0.6000             0.1338
+3                                    1.0           1.693629e+08              0.5979             0.1091
+4                                    2.0           3.387258e+08              0.5952             0.0954
+5                                    5.0           8.468145e+08              0.5921             0.0823
+
+C2
+                        recall default         recall threshold        
+                                  mean     std             mean     std
+class                                                                  
+ARP_Spoofing                    0.8451  0.0589           0.7982  0.0595
+Benign                          0.8514  0.0149           0.8779  0.0136
+MQTT-DDoS-Connect_Flood         0.9999  0.0000           0.9999  0.0000
+MQTT-Malformed_Data             0.8417  0.0064           0.8115  0.0103
+Recon-Port_Scan                 0.9717  0.0012           0.9715  0.0011
+Recon-VulScan                   0.2961  0.0084           0.2960  0.0102
+TCP_IP-DDoS-SYN                 0.8071  0.0050           0.8071  0.0050
+TCP_IP-DoS-SYN                  0.9293  0.0060           0.9293  0.0060
+
+D
+   run  generations  search s  archive size  final population hypervolume  near-optimal subsets  consensus size  same as saved subset  Jaccard with G=20 subset  macro_F1  F1_gauss_10  F1_semantic_gauss_10
+0    1           20  127.5677           480                        0.7138                     7              15                  True                    1.0000    0.7860       0.7002                0.7131
+1    1           40  249.4118           960                        0.8030                     5              21                 False                    0.5652    0.7889       0.7202                0.7226
+2    1           60  377.8436          1439                        0.7994                     1              17                 False                    0.6842    0.7897       0.7109                0.7211
+3    2           20  225.1780           480                        0.6977                     8              19                  True                    1.0000    0.7881       0.7183                0.7146
+4    2           40  293.1850           960                        0.7756                     5              17                 False                    0.8947    0.7900       0.7127                0.7143
+5    2           60  375.4006          1440                        0.8009                     3              22                 False                    0.6400    0.7913       0.7035                0.6997
+6    3           20  124.1009           480                        0.6593                     6              21                  True                    1.0000    0.7923       0.7220                0.7240
+7    3           40  253.2409           960                        0.7042                     5              22                 False                    0.8696    0.7921       0.7238                0.7247
+8    3           60  381.9202          1440                        0.7479                     8              22                 False                    0.8696    0.7921       0.7238                0.7247
+
+F1
+           test copy  Min<=AVG<=Max broken (share of rows)  rows with a value clipped to 0 (share)
+0              clean                                0.0000                                     0.0
+1            gauss_5                                0.4958                                     0.0
+2           gauss_10                                0.5813                                     0.0
+3           gauss_20                                0.6599                                     0.0
+4  semantic_gauss_10                                0.5792                                     0.0
+5            uniform                                0.5858                                     0.0
+6            laplace                                0.5657                                     0.0
+
+F2
+                                       n_features  macro_F1  F1_correlated_10
+method                                                                       
+All features + IAT (reference)               42.0    0.8784            0.8523
+Proposed: NSGA-II (3-obj) + consensus        20.5    0.7896            0.7171
+GA single-objective                          21.1    0.7902            0.7058
+All features                                 41.0    0.7945            0.7044
+RFE (top-k)                                  20.5    0.7935            0.6941
+NSGA-II (3-obj)                              13.6    0.7856            0.6894
+NSGA-II (2-obj)                               9.0    0.7690            0.6830
+MI bootstrap consensus (k)                   20.5    0.7881            0.6541
+MI (top-k)                                   20.5    0.7880            0.6528
+Random (k)                                   20.5    0.7289            0.6307
+
+F2 paired
+                               vs  mean diff  95% CI low  95% CI high  runs favoring first  Wilcoxon p  Holm p
+0  All features + IAT (reference)    -0.1352     -0.1427      -0.1278                    0      0.0020  0.0176
+1                    All features     0.0127      0.0013       0.0242                    8      0.0273  0.0547
+2                      MI (top-k)     0.0643      0.0410       0.0876                   10      0.0020  0.0176
+3                     RFE (top-k)     0.0230      0.0116       0.0343                    9      0.0059  0.0293
+4                 NSGA-II (2-obj)     0.0341      0.0203       0.0478                   10      0.0020  0.0176
+5                 NSGA-II (3-obj)     0.0277      0.0048       0.0507                    9      0.0098  0.0293
+6                      Random (k)     0.0864      0.0409       0.1318                    9      0.0059  0.0293
+7      MI bootstrap consensus (k)     0.0630      0.0385       0.0876                   10      0.0020  0.0176
+8             GA single-objective     0.0113     -0.0026       0.0253                    7      0.1055  0.1055
+
