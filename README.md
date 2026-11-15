@@ -1,5 +1,7 @@
 # Noise-robust multi-objective feature selection with leakage testing for IoMT intrusion detection
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24252004.svg)](https://doi.org/10.5281/zenodo.24252004)
+
 Code and run-level results for the manuscript "Noise-Robust Multi-Objective Feature Selection with Leakage Testing for Intrusion Detection in Internet of Medical Things Networks".
 
 ## Data
@@ -60,4 +62,4 @@ Python 3.11.17, scikit-learn 1.9.1, pymoo 0.6.2, NumPy 2.4.6, pandas 3.0.6 (supp
 
 ## License and citation
 
-This code is released under the MIT License (see `LICENSE`). Citation details are in `CITATION.cff`; the article citation will be added once it is published.
+This code is released under the MIT License (see `LICENSE`). Citation details are in `CITATION.cff`, and the archived version is available on Zenodo (https://doi.org/10.5281/zenodo.24252004); the article citation will be added once it is published.
