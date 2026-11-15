@@ -44,7 +44,7 @@ To reproduce Notebooks 4–7 without re-running Notebook 3, copy `results/result
 | `results/results_revision/revision_results.xlsx` | Size-controlled paired tests, IAT part-file tests, recall after thresholding, constraint checks, search budget | Tables 6 (paired column), 9 (centered IAT, part-file-disjoint rows); Supplementary Tables S10–S12 |
 | `results/results_revision/meaning_search_results.xlsx` | Meaning-coded search: means, paired tests, stability, overlap, feature frequency, subsets | Table 7 |
 | `results/results_revision/correlated_v2_results.xlsx` | Group-correlated perturbation: means, paired tests, run-level results, constraint check | Table 5, last column |
-| `results/results_revision/archive_run*_G*.npz`, `archive_meaning_run*.npz` | NSGA-II archives (X = subsets, F = objectives, hv = population hypervolume) from the budget and meaning-coded searches | Supplementary Table S11; Table 7 |
+| `results/results_revision/archive_run*_G*.npz` (runs 1–2), `archive_meaning_run*.npz` | NSGA-II archives (X = subsets, F = objectives, hv = population hypervolume) from the budget and meaning-coded searches | Supplementary Table S11; Table 7 |
 
 ## Settings and seeds
 
@@ -60,4 +60,4 @@ Python 3.11.17, scikit-learn 1.9.1, pymoo 0.6.2, NumPy 2.4.6, pandas 3.0.6 (supp
 
 ## License and citation
 
-[Add a license, for example MIT, and the article citation once published.]
+This code is released under the MIT License (see `LICENSE`). Citation details are in `CITATION.cff`; the article citation will be added once it is published.

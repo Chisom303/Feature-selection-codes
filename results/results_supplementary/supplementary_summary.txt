@@ -1,0 +1,310 @@
+SUPPLEMENTARY ANALYSES
+============================================================
+Environment: Windows-10-10.0.26300-SP0 | CPU: Intel64 Family 6 Model 142 Stepping 10, GenuineIntel | cores: 8 | Python 3.11.17 | scikit-learn 1.9.1 | pymoo 0.6.2 | numpy 2.4.6 | pandas 3.0.6
+
+REPRODUCIBILITY:
+max_abs_diff_clean_F1               0.0
+max_abs_diff_F1_noise10             0.0
+proposed_subset_reproduced_runs    10.0
+runs                               10.0
+
+MEANS (rows = metrics):
+method                        All features + IAT (reference)  All features  MI (top-k)  RFE (top-k)  NSGA-II (2-obj)  NSGA-II (3-obj)  Proposed: NSGA-II (3-obj) + consensus  Random (k)  MI bootstrap consensus (k)  GA single-objective
+n_features                                           42.0000       41.0000     20.5000      20.5000           9.0000          13.6000                                20.5000     20.5000                     20.5000              21.1000
+macro_F1                                              0.8784        0.7945      0.7880       0.7935           0.7690           0.7856                                 0.7896      0.7289                      0.7881               0.7902
+F1_gauss_10                                           0.5919        0.7106      0.6904       0.6963           0.6639           0.6835                                 0.7165      0.6477                      0.6902               0.6954
+F1_semantic_gauss_10                                  0.5949        0.7126      0.6891       0.7061           0.6798           0.6929                                 0.7201      0.6460                      0.6897               0.7069
+F1_uniform                                            0.5943        0.7055      0.6792       0.6993           0.6733           0.6847                                 0.7145      0.6397                      0.6791               0.7007
+F1_laplace                                            0.5927        0.7215      0.7008       0.7156           0.6882           0.7024                                 0.7268      0.6545                      0.7010               0.7158
+F1_quantise                                           0.5458        0.7897      0.7801       0.7868           0.7680           0.7778                                 0.7844      0.7171                      0.7787               0.7862
+F1_missing_10                                         0.8390        0.7586      0.7391       0.7505           0.6932           0.7214                                 0.7373      0.6853                      0.7390               0.7392
+F1_missing_20                                         0.7903        0.7144      0.6771       0.6986           0.6237           0.6566                                 0.6817      0.6363                      0.6774               0.6841
+F1_full_test                                          0.8591        0.7686      0.7622       0.7673           0.7434           0.7585                                 0.7632      0.7055                      0.7622               0.7642
+FPR_full_test                                         0.0765        0.1438      0.1551       0.1477           0.1556           0.1483                                 0.1475      0.1607                      0.1553               0.1464
+FNR_full_test                                         0.0019        0.0025      0.0025       0.0026           0.0027           0.0025                                 0.0025      0.0030                      0.0025               0.0024
+FPR                                                   0.0776        0.1445      0.1557       0.1484           0.1571           0.1492                                 0.1486      0.1616                      0.1556               0.1478
+FNR                                                   0.0058        0.0072      0.0076       0.0073           0.0079           0.0071                                 0.0072      0.0095                      0.0076               0.0071
+thr_FPR                                               0.0939        0.1217      0.1338       0.1302           0.1254           0.1246                                 0.1221      0.1013                      0.1348               0.1268
+thr_FNR                                               0.0016        0.0090      0.0101       0.0092           0.0116           0.0099                                 0.0101      0.0178                      0.0100               0.0094
+thr_macro_F1                                          0.8765        0.7981      0.7896       0.7955           0.7713           0.7879                                 0.7921      0.7306                      0.7897               0.7925
+DT_macro_F1                                           0.8893        0.7836      0.7730       0.7755           0.7489           0.7645                                 0.7724      0.7064                      0.7733               0.7735
+DT_F1_gauss_10                                        0.4941        0.5982      0.5591       0.5796           0.5464           0.5811                                 0.6424      0.5105                      0.5581               0.5805
+DT_F1_semantic_gauss_10                               0.5023        0.6305      0.5665       0.6169           0.6243           0.6144                                 0.6708      0.5307                      0.5651               0.6299
+prec_ARP_Spoofing                                     0.4831        0.3233      0.2928       0.3136           0.2496           0.3032                                 0.2992      0.2526                      0.2936               0.3086
+prec_Benign                                           0.9739        0.9655      0.9634       0.9651           0.9620           0.9659                                 0.9653      0.9545                      0.9634               0.9659
+prec_MQTT-DDoS-Connect_Flood                          0.9999        0.9999      0.9996       0.9998           0.9970           0.9987                                 0.9986      0.9995                      0.9996               0.9995
+prec_MQTT-Malformed_Data                              0.9670        0.9174      0.9099       0.9159           0.8762           0.8867                                 0.9021      0.8599                      0.9114               0.9067
+prec_Recon-Port_Scan                                  0.9800        0.9664      0.9782       0.9699           0.9756           0.9691                                 0.9776      0.9720                      0.9770               0.9663
+prec_Recon-VulScan                                    0.8051        0.6006      0.5973       0.5992           0.4192           0.5291                                 0.5667      0.3077                      0.5978               0.5492
+prec_TCP_IP-DDoS-SYN                                  0.9991        0.9225      0.9252       0.9224           0.9109           0.9211                                 0.9208      0.8422                      0.9242               0.9205
+prec_TCP_IP-DoS-SYN                                   0.9990        0.8318      0.8309       0.8316           0.8327           0.8335                                 0.8330      0.7759                      0.8307               0.8331
+
+CI95:
+method                        All features + IAT (reference)  All features  MI (top-k)  RFE (top-k)  NSGA-II (2-obj)  NSGA-II (3-obj)  Proposed: NSGA-II (3-obj) + consensus  Random (k)  MI bootstrap consensus (k)  GA single-objective
+n_features                                            0.0000        0.0000      2.5957       2.5957           0.7541           2.5504                                 2.5957      2.5957                      2.5957               2.0911
+macro_F1                                              0.0025        0.0025      0.0023       0.0031           0.0104           0.0053                                 0.0022      0.0427                      0.0026               0.0069
+F1_gauss_10                                           0.0033        0.0067      0.0113       0.0072           0.0101           0.0228                                 0.0056      0.0384                      0.0111               0.0072
+F1_semantic_gauss_10                                  0.0034        0.0059      0.0117       0.0061           0.0169           0.0206                                 0.0043      0.0429                      0.0116               0.0065
+F1_uniform                                            0.0034        0.0062      0.0127       0.0066           0.0196           0.0226                                 0.0036      0.0440                      0.0125               0.0069
+F1_laplace                                            0.0031        0.0053      0.0109       0.0060           0.0154           0.0182                                 0.0045      0.0417                      0.0107               0.0062
+F1_quantise                                           0.0066        0.0043      0.0051       0.0047           0.0089           0.0063                                 0.0034      0.0436                      0.0062               0.0073
+F1_missing_10                                         0.0022        0.0030      0.0073       0.0051           0.0111           0.0090                                 0.0059      0.0376                      0.0071               0.0122
+F1_missing_20                                         0.0021        0.0033      0.0153       0.0087           0.0117           0.0145                                 0.0106      0.0339                      0.0151               0.0153
+F1_full_test                                          0.0026        0.0021      0.0023       0.0028           0.0099           0.0042                                 0.0022      0.0431                      0.0024               0.0058
+FPR_full_test                                         0.0016        0.0019      0.0026       0.0044           0.0058           0.0121                                 0.0106      0.0131                      0.0028               0.0032
+FNR_full_test                                         0.0001        0.0001      0.0001       0.0000           0.0001           0.0001                                 0.0001      0.0007                      0.0001               0.0001
+FPR                                                   0.0018        0.0017      0.0022       0.0041           0.0058           0.0121                                 0.0107      0.0127                      0.0026               0.0034
+FNR                                                   0.0002        0.0002      0.0002       0.0002           0.0006           0.0002                                 0.0004      0.0024                      0.0002               0.0003
+thr_FPR                                               0.0009        0.0037      0.0035       0.0041           0.0197           0.0120                                 0.0097      0.0270                      0.0028               0.0041
+thr_FNR                                               0.0001        0.0002      0.0003       0.0003           0.0017           0.0005                                 0.0004      0.0057                      0.0003               0.0005
+thr_macro_F1                                          0.0026        0.0024      0.0025       0.0032           0.0115           0.0056                                 0.0027      0.0429                      0.0027               0.0074
+DT_macro_F1                                           0.0023        0.0044      0.0068       0.0056           0.0133           0.0084                                 0.0077      0.0453                      0.0065               0.0132
+DT_F1_gauss_10                                        0.0189        0.0101      0.0204       0.0082           0.0220           0.0536                                 0.0180      0.0394                      0.0273               0.0152
+DT_F1_semantic_gauss_10                               0.0160        0.0098      0.0288       0.0144           0.0263           0.0495                                 0.0094      0.0470                      0.0347               0.0154
+prec_ARP_Spoofing                                     0.0200        0.0188      0.0108       0.0204           0.0248           0.0245                                 0.0090      0.0332                      0.0130               0.0286
+prec_Benign                                           0.0010        0.0008      0.0009       0.0007           0.0029           0.0011                                 0.0013      0.0110                      0.0009               0.0014
+prec_MQTT-DDoS-Connect_Flood                          0.0000        0.0000      0.0002       0.0001           0.0019           0.0009                                 0.0017      0.0004                      0.0002               0.0002
+prec_MQTT-Malformed_Data                              0.0034        0.0038      0.0134       0.0090           0.0192           0.0100                                 0.0080      0.0493                      0.0150               0.0102
+prec_Recon-Port_Scan                                  0.0071        0.0121      0.0072       0.0119           0.0056           0.0118                                 0.0044      0.0049                      0.0082               0.0135
+prec_Recon-VulScan                                    0.0084        0.0134      0.0102       0.0109           0.0924           0.0778                                 0.0495      0.1670                      0.0113               0.0719
+prec_TCP_IP-DDoS-SYN                                  0.0003        0.0020      0.0022       0.0020           0.0104           0.0020                                 0.0038      0.0645                      0.0026               0.0010
+prec_TCP_IP-DoS-SYN                                   0.0002        0.0026      0.0023       0.0024           0.0031           0.0025                                 0.0028      0.0859                      0.0022               0.0029
+
+STABILITY:
+                               method  mean k  Jaccard  Jaccard expected by chance  Nogueira phi  phi CI low  phi CI high
+                           MI (top-k)    20.5   0.8116                      0.3333        0.7864      0.7260       0.8469
+                          RFE (top-k)    20.5   0.7705                      0.3333        0.7388      0.6846       0.7929
+                      NSGA-II (2-obj)     9.0   0.3273                      0.1233        0.3388      0.2719       0.4058
+                      NSGA-II (3-obj)    13.6   0.3129                      0.1988        0.2103      0.1710       0.2496
+Proposed: NSGA-II (3-obj) + consensus    20.5   0.4399                      0.3333        0.2228      0.1842       0.2613
+                           Random (k)    20.5   0.3246                      0.3333       -0.0179     -0.0684       0.0326
+           MI bootstrap consensus (k)    20.5   0.8116                      0.3333        0.7864      0.7260       0.8469
+                  GA single-objective    21.1   0.4500                      0.3465        0.2178      0.1563       0.2792
+
+EFFECT SIZES:
+           metric                    proposed vs  mean difference  rank-biserial r  Wilcoxon p  Holm p (within metric)  Holm p (all 36 tests)
+         macro_F1 All features + IAT (reference)         -0.08881         -1.00000     0.00195                 0.01172                0.07031
+         macro_F1                   All features         -0.00495         -0.81818     0.01953                 0.05859                0.23438
+         macro_F1                     MI (top-k)          0.00160          0.52727     0.16016                 0.32031                1.00000
+         macro_F1                    RFE (top-k)         -0.00394         -0.89091     0.00977                 0.03906                0.12695
+         macro_F1                NSGA-II (2-obj)          0.02060          1.00000     0.00195                 0.01172                0.07031
+         macro_F1                NSGA-II (3-obj)          0.00399          0.52727     0.16016                 0.32031                1.00000
+      F1_noise_10 All features + IAT (reference)          0.12464          1.00000     0.00195                 0.01172                0.07031
+      F1_noise_10                   All features          0.00597          0.45455     0.23242                 0.23242                1.00000
+      F1_noise_10                     MI (top-k)          0.02614          1.00000     0.00195                 0.01172                0.07031
+      F1_noise_10                    RFE (top-k)          0.02026          1.00000     0.00195                 0.01172                0.07031
+      F1_noise_10                NSGA-II (2-obj)          0.05260          1.00000     0.00195                 0.01172                0.07031
+      F1_noise_10                NSGA-II (3-obj)          0.03306          1.00000     0.00195                 0.01172                0.07031
+       F1_drop_10 All features + IAT (reference)         -0.21345         -1.00000     0.00195                 0.01172                0.07031
+       F1_drop_10                   All features         -0.01092         -0.92727     0.00586                 0.01172                0.09375
+       F1_drop_10                     MI (top-k)         -0.02454         -1.00000     0.00195                 0.01172                0.07031
+       F1_drop_10                    RFE (top-k)         -0.02420         -1.00000     0.00195                 0.01172                0.07031
+       F1_drop_10                NSGA-II (2-obj)         -0.03200         -1.00000     0.00195                 0.01172                0.07031
+       F1_drop_10                NSGA-II (3-obj)         -0.02906         -1.00000     0.00195                 0.01172                0.07031
+       n_features All features + IAT (reference)        -21.50000         -1.00000     0.00195                 0.01172                0.07031
+       n_features                   All features        -20.50000         -1.00000     0.00195                 0.01172                0.07031
+       n_features                     MI (top-k)          0.00000          0.00000     1.00000                 1.00000                1.00000
+       n_features                    RFE (top-k)          0.00000          0.00000     1.00000                 1.00000                1.00000
+       n_features                NSGA-II (2-obj)         11.50000          1.00000     0.00195                 0.01172                0.07031
+       n_features                NSGA-II (3-obj)          6.90000          1.00000     0.00195                 0.01172                0.07031
+infer_ms_per_1000 All features + IAT (reference)          1.79233          0.96364     0.00391                 0.02344                0.07031
+infer_ms_per_1000                   All features         -1.15872         -0.92727     0.00586                 0.02930                0.09375
+infer_ms_per_1000                     MI (top-k)          0.25634          0.45455     0.23242                 0.46484                1.00000
+infer_ms_per_1000                    RFE (top-k)          0.18020          0.23636     0.55664                 0.55664                1.00000
+infer_ms_per_1000                NSGA-II (2-obj)          0.60107          0.63636     0.08398                 0.25781                0.75586
+infer_ms_per_1000                NSGA-II (3-obj)          0.58843          0.67273     0.06445                 0.25781                0.64453
+     train_time_s All features + IAT (reference)         -1.12669         -0.70909     0.04883                 0.09766                0.53711
+     train_time_s                   All features         -4.59924         -1.00000     0.00195                 0.01172                0.07031
+     train_time_s                     MI (top-k)         -6.38623         -1.00000     0.00195                 0.01172                0.07031
+     train_time_s                    RFE (top-k)         -5.01829         -1.00000     0.00195                 0.01172                0.07031
+     train_time_s                NSGA-II (2-obj)          1.30938          0.92727     0.00586                 0.01758                0.09375
+     train_time_s                NSGA-II (3-obj)         -0.11423          0.20000     0.62500                 0.62500                1.00000
+
+EFFECT SIZES (EXTENDED):
+                 metric                    proposed vs  mean difference  runs favouring proposed  rank-biserial r  Wilcoxon p  Holm p (within metric)
+               macro_F1 All features + IAT (reference)         -0.08881                        0         -1.00000     0.00195                 0.01758
+               macro_F1                   All features         -0.00495                        1         -0.81818     0.01953                 0.09766
+               macro_F1                     MI (top-k)          0.00160                        7          0.52727     0.16016                 0.64062
+               macro_F1                    RFE (top-k)         -0.00394                        1         -0.89091     0.00977                 0.05859
+               macro_F1                NSGA-II (2-obj)          0.02060                       10          1.00000     0.00195                 0.01758
+               macro_F1                NSGA-II (3-obj)          0.00399                        8          0.52727     0.16016                 0.64062
+               macro_F1                     Random (k)          0.06070                        9          0.92727     0.00586                 0.04102
+               macro_F1     MI bootstrap consensus (k)          0.00153                        6          0.41818     0.27539                 0.64062
+               macro_F1            GA single-objective         -0.00066                        3         -0.30909     0.43164                 0.64062
+            F1_gauss_10 All features + IAT (reference)          0.12464                       10          1.00000     0.00195                 0.01758
+            F1_gauss_10                   All features          0.00597                        7          0.45455     0.23242                 0.23242
+            F1_gauss_10                     MI (top-k)          0.02614                       10          1.00000     0.00195                 0.01758
+            F1_gauss_10                    RFE (top-k)          0.02026                       10          1.00000     0.00195                 0.01758
+            F1_gauss_10                NSGA-II (2-obj)          0.05260                       10          1.00000     0.00195                 0.01758
+            F1_gauss_10                NSGA-II (3-obj)          0.03306                       10          1.00000     0.00195                 0.01758
+            F1_gauss_10                     Random (k)          0.06878                        9          0.96364     0.00391                 0.01758
+            F1_gauss_10     MI bootstrap consensus (k)          0.02628                       10          1.00000     0.00195                 0.01758
+            F1_gauss_10            GA single-objective          0.02113                        9          0.96364     0.00391                 0.01758
+   F1_semantic_gauss_10 All features + IAT (reference)          0.12523                       10          1.00000     0.00195                 0.01758
+   F1_semantic_gauss_10                   All features          0.00753                        8          0.70909     0.04883                 0.04883
+   F1_semantic_gauss_10                     MI (top-k)          0.03103                       10          1.00000     0.00195                 0.01758
+   F1_semantic_gauss_10                    RFE (top-k)          0.01400                        8          0.89091     0.00977                 0.02930
+   F1_semantic_gauss_10                NSGA-II (2-obj)          0.04034                        9          0.96364     0.00391                 0.01953
+   F1_semantic_gauss_10                NSGA-II (3-obj)          0.02719                       10          1.00000     0.00195                 0.01758
+   F1_semantic_gauss_10                     Random (k)          0.07412                        9          0.92727     0.00586                 0.02344
+   F1_semantic_gauss_10     MI bootstrap consensus (k)          0.03041                       10          1.00000     0.00195                 0.01758
+   F1_semantic_gauss_10            GA single-objective          0.01320                        9          0.89091     0.00977                 0.02930
+             F1_uniform All features + IAT (reference)          0.12018                       10          1.00000     0.00195                 0.01758
+             F1_uniform                   All features          0.00902                        9          0.74545     0.03711                 0.03711
+             F1_uniform                     MI (top-k)          0.03525                       10          1.00000     0.00195                 0.01758
+             F1_uniform                    RFE (top-k)          0.01518                        9          0.92727     0.00586                 0.01953
+             F1_uniform                NSGA-II (2-obj)          0.04115                       10          1.00000     0.00195                 0.01758
+             F1_uniform                NSGA-II (3-obj)          0.02981                        9          0.96364     0.00391                 0.01953
+             F1_uniform                     Random (k)          0.07482                        9          0.89091     0.00977                 0.01953
+             F1_uniform     MI bootstrap consensus (k)          0.03535                       10          1.00000     0.00195                 0.01758
+             F1_uniform            GA single-objective          0.01374                        9          0.96364     0.00391                 0.01953
+             F1_laplace All features + IAT (reference)          0.13419                       10          1.00000     0.00195                 0.01758
+             F1_laplace                   All features          0.00537                        7          0.52727     0.16016                 0.16016
+             F1_laplace                     MI (top-k)          0.02607                       10          1.00000     0.00195                 0.01758
+             F1_laplace                    RFE (top-k)          0.01129                        8          0.89091     0.00977                 0.02930
+             F1_laplace                NSGA-II (2-obj)          0.03867                        9          0.96364     0.00391                 0.01953
+             F1_laplace                NSGA-II (3-obj)          0.02447                       10          1.00000     0.00195                 0.01758
+             F1_laplace                     Random (k)          0.07235                        9          0.92727     0.00586                 0.02344
+             F1_laplace     MI bootstrap consensus (k)          0.02581                       10          1.00000     0.00195                 0.01758
+             F1_laplace            GA single-objective          0.01106                        8          0.78182     0.02734                 0.05469
+            F1_quantise All features + IAT (reference)          0.23854                       10          1.00000     0.00195                 0.01758
+            F1_quantise                   All features         -0.00533                        3         -0.63636     0.08398                 0.41992
+            F1_quantise                     MI (top-k)          0.00427                        8          0.63636     0.08398                 0.41992
+            F1_quantise                    RFE (top-k)         -0.00239                        6         -0.16364     0.69531                 1.00000
+            F1_quantise                NSGA-II (2-obj)          0.01637                        9          0.92727     0.00586                 0.04688
+            F1_quantise                NSGA-II (3-obj)          0.00656                        7          0.56364     0.13086                 0.41992
+            F1_quantise                     Random (k)          0.06732                        9          0.89091     0.00977                 0.06836
+            F1_quantise     MI bootstrap consensus (k)          0.00570                        7          0.70909     0.04883                 0.29297
+            F1_quantise            GA single-objective         -0.00182                        3         -0.20000     0.62500                 1.00000
+          F1_missing_10 All features + IAT (reference)         -0.10167                        0         -1.00000     0.00195                 0.01758
+          F1_missing_10                   All features         -0.02126                        0         -1.00000     0.00195                 0.01758
+          F1_missing_10                     MI (top-k)         -0.00178                        5         -0.12727     0.76953                 1.00000
+          F1_missing_10                    RFE (top-k)         -0.01320                        0         -1.00000     0.00195                 0.01758
+          F1_missing_10                NSGA-II (2-obj)          0.04406                       10          1.00000     0.00195                 0.01758
+          F1_missing_10                NSGA-II (3-obj)          0.01594                        9          0.96364     0.00391                 0.01953
+          F1_missing_10                     Random (k)          0.05205                        8          0.85455     0.01367                 0.05469
+          F1_missing_10     MI bootstrap consensus (k)         -0.00167                        5         -0.16364     0.69531                 1.00000
+          F1_missing_10            GA single-objective         -0.00187                        4         -0.16364     0.69531                 1.00000
+          F1_missing_20 All features + IAT (reference)         -0.10862                        0         -1.00000     0.00195                 0.01758
+          F1_missing_20                   All features         -0.03269                        0         -1.00000     0.00195                 0.01758
+          F1_missing_20                     MI (top-k)          0.00455                        7          0.30909     0.43164                 1.00000
+          F1_missing_20                    RFE (top-k)         -0.01689                        1         -0.92727     0.00586                 0.03516
+          F1_missing_20                NSGA-II (2-obj)          0.05798                       10          1.00000     0.00195                 0.01758
+          F1_missing_20                NSGA-II (3-obj)          0.02513                        8          0.89091     0.00977                 0.04883
+          F1_missing_20                     Random (k)          0.04543                        8          0.81818     0.01953                 0.07812
+          F1_missing_20     MI bootstrap consensus (k)          0.00432                        6          0.23636     0.55664                 1.00000
+          F1_missing_20            GA single-objective         -0.00244                        3         -0.16364     0.69531                 1.00000
+            DT_macro_F1 All features + IAT (reference)         -0.11690                        0         -1.00000     0.00195                 0.01758
+            DT_macro_F1                   All features         -0.01113                        1         -0.89091     0.00977                 0.07812
+            DT_macro_F1                     MI (top-k)         -0.00056                        6          0.12727     0.76953                 1.00000
+            DT_macro_F1                    RFE (top-k)         -0.00305                        5         -0.16364     0.69531                 1.00000
+            DT_macro_F1                NSGA-II (2-obj)          0.02348                        9          0.85455     0.01367                 0.09570
+            DT_macro_F1                NSGA-II (3-obj)          0.00791                        7          0.78182     0.02734                 0.13672
+            DT_macro_F1                     Random (k)          0.06606                        9          0.85455     0.01367                 0.09570
+            DT_macro_F1     MI bootstrap consensus (k)         -0.00087                        5          0.05455     0.92188                 1.00000
+            DT_macro_F1            GA single-objective         -0.00111                        3         -0.20000     0.62500                 1.00000
+         DT_F1_gauss_10 All features + IAT (reference)          0.14828                       10          1.00000     0.00195                 0.01758
+         DT_F1_gauss_10                   All features          0.04422                       10          1.00000     0.00195                 0.01758
+         DT_F1_gauss_10                     MI (top-k)          0.08330                       10          1.00000     0.00195                 0.01758
+         DT_F1_gauss_10                    RFE (top-k)          0.06277                       10          1.00000     0.00195                 0.01758
+         DT_F1_gauss_10                NSGA-II (2-obj)          0.09600                       10          1.00000     0.00195                 0.01758
+         DT_F1_gauss_10                NSGA-II (3-obj)          0.06133                        9          0.78182     0.02734                 0.02734
+         DT_F1_gauss_10                     Random (k)          0.13190                       10          1.00000     0.00195                 0.01758
+         DT_F1_gauss_10     MI bootstrap consensus (k)          0.08429                       10          1.00000     0.00195                 0.01758
+         DT_F1_gauss_10            GA single-objective          0.06193                       10          1.00000     0.00195                 0.01758
+DT_F1_semantic_gauss_10 All features + IAT (reference)          0.16848                       10          1.00000     0.00195                 0.01758
+DT_F1_semantic_gauss_10                   All features          0.04032                       10          1.00000     0.00195                 0.01758
+DT_F1_semantic_gauss_10                     MI (top-k)          0.10426                       10          1.00000     0.00195                 0.01758
+DT_F1_semantic_gauss_10                    RFE (top-k)          0.05391                       10          1.00000     0.00195                 0.01758
+DT_F1_semantic_gauss_10                NSGA-II (2-obj)          0.04645                        9          0.92727     0.00586                 0.01758
+DT_F1_semantic_gauss_10                NSGA-II (3-obj)          0.05638                        7          0.78182     0.02734                 0.02734
+DT_F1_semantic_gauss_10                     Random (k)          0.14011                       10          1.00000     0.00195                 0.01758
+DT_F1_semantic_gauss_10     MI bootstrap consensus (k)          0.10572                       10          1.00000     0.00195                 0.01758
+DT_F1_semantic_gauss_10            GA single-objective          0.04084                        9          0.96364     0.00391                 0.01758
+
+TOST:
+mean difference      -0.004952
+90% CI low           -0.008143
+90% CI high          -0.001762
+margin                    0.01
+Wilcoxon TOST p       0.013672
+equivalent at 0.05        True
+
+TEST BOOTSTRAP CI:
+                                       macro_F1 2.5%  macro_F1 97.5%
+All features + IAT (reference)                0.8741          0.8827
+All features                                  0.7899          0.7993
+MI (top-k)                                    0.7833          0.7924
+RFE (top-k)                                   0.7889          0.7981
+NSGA-II (2-obj)                               0.7649          0.7730
+NSGA-II (3-obj)                               0.7812          0.7898
+Proposed: NSGA-II (3-obj) + consensus         0.7852          0.7940
+clean F1 diff (proposed - all) 2.5%   -0.0064
+97.5%                                 -0.0033
+F1 at 10% noise diff 2.5%              0.0036
+F1 at 10% noise diff 97.5%             0.0097
+
+SENSITIVITY:
+                k  n_near  macro_F1  F1_gauss_10  F1_semantic_gauss_10  Nogueira phi
+tau   theta                                                                         
+0.005 0.3    22.9     2.3    0.7931       0.7133                0.7213        0.1922
+      0.5    21.2     2.3    0.7914       0.7113                0.7201        0.1926
+      0.7    15.9     2.3    0.7852       0.7039                0.7073        0.2363
+0.010 0.3    23.4     6.3    0.7905       0.7142                0.7206        0.2368
+      0.5    20.5     6.3    0.7896       0.7165                0.7201        0.2228
+      0.7    15.5     6.3    0.7827       0.7056                0.7108        0.2358
+0.020 0.3    26.2    30.7    0.7907       0.7190                0.7233        0.2904
+      0.5    20.0    30.7    0.7843       0.7127                0.7160        0.2407
+      0.7    12.8    30.7    0.7731       0.6993                0.6998        0.2428
+
+HYPERVOLUME mean by generation:
+0     0.5094
+1     0.5209
+2     0.5494
+3     0.5651
+4     0.5722
+5     0.5815
+6     0.5934
+7     0.6046
+8     0.6130
+9     0.6233
+10    0.6385
+11    0.6471
+12    0.6523
+13    0.6577
+14    0.6637
+15    0.6736
+16    0.6831
+17    0.6881
+18    0.6900
+19    0.6952
+
+LATENCY (1 core, run 1):
+                                       median_ms_per_record  batch_ms_per_1000_1core
+All features                                        24.1286                  22.5036
+MI (top-k)                                          24.4769                  23.4666
+RFE (top-k)                                         14.3592                  15.6774
+Proposed: NSGA-II (3-obj) + consensus               12.8441                  16.2543
+
+IAT G1:
+          class              predictors  accuracy predicting capture file
+TCP_IP-DDoS-SYN                IAT only                            0.9722
+TCP_IP-DDoS-SYN All features except IAT                            0.7195
+ TCP_IP-DoS-SYN                IAT only                            0.9704
+ TCP_IP-DoS-SYN All features except IAT                            0.6852
+
+IAT G2:
+IAT-only macro-F1 (clean)       0.7533
+IAT-only macro-F1 (5% noise)    0.2481
+
+IAT G3:
+                           50% train     25% train    75% train      50% test      25% test     75% test
+Label                                                                                                   
+ARP_Spoofing             169402128.0  4.361248e-03  169402416.0  8.470138e+07  5.368728e-03  169402752.0
+Benign                   169461488.0  1.293430e-02  169465088.0  1.006676e-01  1.480588e-02  169470160.0
+MQTT-DDoS-Connect_Flood   84667032.0  8.466702e+07   84667040.0  8.466705e+07  8.466705e+07   84667048.0
+MQTT-Malformed_Data      169323360.0  2.990007e-04  169323376.0  1.693234e+08  4.711390e-04  169323408.0
+Recon-Port_Scan          169410144.0  1.063108e-04  169410240.0  1.694103e+08  3.089905e-05  169410256.0
+Recon-VulScan            169453248.0  2.494407e-03  169453280.0  1.694533e+08  8.962488e-03  169453296.0
+TCP_IP-DDoS-SYN           84696328.0  8.469630e+07   84696408.0  8.469645e+07  8.469643e+07   84696496.0
+TCP_IP-DoS-SYN            84674632.0  8.467461e+07   84674664.0  8.467474e+07  8.467474e+07   84674752.0

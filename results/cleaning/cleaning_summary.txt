@@ -1,0 +1,40 @@
+DATA CLEANING SUMMARY — CICIoMT2024 subset
+============================================================
+Train and test kept separate (official split). Rules learned on train only.
+
+Cleaning log:
+Step                            Description  Train before  Train removed  Train after  Test before  Test removed  Test after
+  C1 Load files, check schema (rows loaded)       1716964              0      1716964       377662             0      377662
+  C2        Remove rows with missing values       1716964              0      1716964       377662             0      377662
+  C3       Remove rows with infinite values       1716964              0      1716964       377662             0      377662
+  C4      Remove physically impossible rows       1716964              1      1716963       377662             0      377662
+  C5            Remove exact duplicate rows       1716963           3794      1713169       377662          1724      375938
+  C6    Remove rows with conflicting labels       1713169              0      1713169       375938             0      375938
+  C7 Remove test rows also present in train       1713169              0      1713169       375938           195      375743
+
+Zero-variance features dropped: Drate
+Duplicate features dropped: Srate (= Rate), LLC (= IPv)
+Final number of features: 42
+Final features: Header_Length, Protocol Type, Duration, Rate, fin_flag_number, syn_flag_number, rst_flag_number, psh_flag_number, ack_flag_number, ece_flag_number, cwr_flag_number, ack_count, syn_count, fin_count, rst_count, HTTP, HTTPS, DNS, Telnet, SMTP, SSH, IRC, TCP, UDP, DHCP, ARP, ICMP, IGMP, IPv, Tot sum, Min, Max, AVG, Std, Tot size, IAT, Number, Magnitue, Radius, Covariance, Variance, Weight
+
+Class counts:
+                         Train (raw)  Test (raw)  Train (clean)  Test (clean)  Train kept %  Test kept %
+Label                                                                                                   
+ARP_Spoofing                   16047        1744          16047          1744         100.0        100.0
+Benign                        192732       37607         192731         37607         100.0        100.0
+MQTT-DDoS-Connect_Flood       173036       41916         173036         41916         100.0        100.0
+MQTT-Malformed_Data             5130        1747           5130          1747         100.0        100.0
+Recon-Port_Scan                83981       22622          80247         20726          95.6         91.6
+Recon-VulScan                   2173        1034           2129          1011          98.0         97.8
+TCP_IP-DDoS-SYN               801962      172397         801946        172397         100.0        100.0
+TCP_IP-DoS-SYN                441903       98595         441903         98595         100.0        100.0
+
+Outliers (kept): % outlying values within each class (class-specific IQR limits):
+ARP_Spoofing                2.8
+Benign                     11.9
+MQTT-DDoS-Connect_Flood     2.3
+MQTT-Malformed_Data         2.0
+Recon-Port_Scan             9.0
+Recon-VulScan               5.6
+TCP_IP-DDoS-SYN             3.3
+TCP_IP-DoS-SYN              8.2

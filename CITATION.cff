@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this code or these results, please cite them as below."
+title: "Code and results for: Noise-Robust Multi-Objective Feature Selection with Leakage Testing for Intrusion Detection in Internet of Medical Things Networks"
+type: software
+authors:
+  - family-names: Alozie
+    given-names: Chisom Elizabeth
+    affiliation: "University of the Cumberlands"
+  - family-names: Adieze
+    given-names: Chidinma Queen
+    affiliation: "Western Governors University"
+  - family-names: Emesiani
+    given-names: Fabian
+    affiliation: "Westcliff University"
+version: "1.0.1"
+date-released: "2026-11-15"
+license: MIT
+repository-code: "https://github.com/Chisom303/Feature-selection-codes"
+abstract: >-
+  Jupyter notebooks and run-level results for a three-objective NSGA-II feature
+  selection study with archive consensus on eight CICIoMT2024 traffic classes,
+  including robustness tests under synthetic and group-correlated noise, a
+  meaning-based noise-mask search, stability analysis, and leakage tests of the
+  inter-arrival time (IAT) feature. The CICIoMT2024 data are not redistributed.
+keywords:
+  - IoMT security
+  - intrusion detection
+  - multi-objective feature selection
+  - NSGA-II
+  - data leakage
+  - robustness
+  - CICIoMT2024

@@ -1,0 +1,8 @@
+numpy==2.4.6
+pandas==3.0.6
+scipy
+scikit-learn==1.9.1
+pymoo==0.6.2
+matplotlib
+openpyxl
+jupyter
